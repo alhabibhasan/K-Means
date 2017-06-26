@@ -45,7 +45,7 @@ public class KMeans {
 	 * Used to start the K means algorithm.
 	 */
 	public void run() {
-		//if (checkValidRun()) { // check if the algo can run without any errors
+		if (checkValidRun()) { // check if the algo can run without any errors
 			double[][] results = new double[points.size()][clusters.size()];
 			double[][] previousResults = null;
 			boolean isFinished = false;
@@ -84,9 +84,7 @@ public class KMeans {
 			}
 			System.out.println("-----------------------------");
 			outputCluster(clusters);
-		//} else {
-		//	System.out.println("Error");
-		//}
+		}
 	}
 
 	/**
@@ -96,7 +94,7 @@ public class KMeans {
 		if (this.points.isEmpty() || this.clusters.isEmpty()) {
 			return false;
 		}
-		
+
 		return true;
 	}
 

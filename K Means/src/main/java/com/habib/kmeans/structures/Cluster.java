@@ -74,22 +74,27 @@ public class Cluster {
 	}
 
 	public void assignCentroid(ArrayList<Point> points) {
-		boolean assigned = false;
+		if (!points.isEmpty()) {
+			boolean assigned = false;
 
-		while (!assigned) {
-			// will loop until we find an appropriate centroid
-			int indexToCheck = (int) Math.floor(Math.random() * points.size());
-			Point toCheck = points.get(indexToCheck);
-			// ensure that the point isnt already selected
-			if (toCheck.isCentroid() == false) {
-				toCheck.setCentroid(true);
-				this.setCenter(new Centroid(toCheck));
+			while (!assigned) {
+				// will loop until we find an appropriate centroid
+				int indexToCheck = (int) Math.floor(Math.random() * points.size());
+				Point toCheck = points.get(indexToCheck);
+				// ensure that the point isnt already selected
+				if (toCheck.isCentroid() == false) {
+					toCheck.setCentroid(true);
+					this.setCenter(new Centroid(toCheck));
 
-				// update the point in the array
-				// terminate the loop
-				assigned = true;
+					// update the point in the array
+					// terminate the loop
+					assigned = true;
 
+				}
 			}
+		} else {
+			System.err.println("Must add points AND clusters");
+			System.exit(1);
 		}
 
 	}
