@@ -88,31 +88,6 @@ public class KMeans {
 	}
 
 	/**
-	 * @return
-	 */
-	private boolean checkValidRun() {
-		if (this.points.isEmpty() || this.clusters.isEmpty()) {
-			return false;
-		}
-
-		return true;
-	}
-
-	/**
-	 * This method output each cluster in a string form
-	 * 
-	 * @param clusters
-	 *            The list of clusters
-	 */
-	private void outputCluster(ArrayList<Cluster> clusters) {
-		for (Cluster c : clusters) {
-			System.out.println(":: Cluster ::");
-			System.out.println(c.toString());
-		}
-
-	}
-
-	/**
 	 * Assigns a point to the appropriate cluster
 	 * 
 	 * @param pointAccessing
@@ -125,8 +100,6 @@ public class KMeans {
 	 */
 	private void assignPointToCluster(Point pointAccessing, Cluster clusterAccessing,
 			double distanceFromPointToCentroid) {
-		// first check that the point we are assigning is not already the
-		// centroid
 
 		// check if the point has been assigned to any cluster at all
 		if (pointAccessing.getCluster() == null) {
@@ -154,6 +127,33 @@ public class KMeans {
 			}
 		}
 	}
+	
+	/**
+	 * @return
+	 */
+	private boolean checkValidRun() {
+		if (this.points.isEmpty() || this.clusters.isEmpty()) {
+			return false;
+		}
+
+		return true;
+	}
+
+	/**
+	 * This method output each cluster in a string form
+	 * 
+	 * @param clusters
+	 *            The list of clusters
+	 */
+	private void outputCluster(ArrayList<Cluster> clusters) {
+		for (Cluster c : clusters) {
+			System.out.println(":: Cluster ::");
+			System.out.println(c.toString());
+		}
+
+	}
+
+	
 
 	/**
 	 * This method takes in the current list of clusters and from each cluster

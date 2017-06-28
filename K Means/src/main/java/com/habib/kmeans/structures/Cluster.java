@@ -72,7 +72,12 @@ public class Cluster {
 	public ArrayList<Point> getPoints() {
 		return points;
 	}
-
+	
+	/**
+	 * This method finds and selects a random point to assign as a cluster. It also ensures that the selected
+	 * centroid hasnt been selected as a centroid before.
+	 * @param points List of all points
+	 */
 	public void assignCentroid(ArrayList<Point> points) {
 		if (!points.isEmpty()) {
 			boolean assigned = false;
