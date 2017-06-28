@@ -1,5 +1,5 @@
 /**
- * 
+ * The GUI is a work in progress
  */
 package com.habib.kmeans.gui;
 
